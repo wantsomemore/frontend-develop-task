@@ -23,10 +23,10 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "cross-env DISABLE_ESLINT_PLUGIN=true craco start",
-    "build": "cross-env DISABLE_ESLINT_PLUGIN=true craco build",
-    "test": "cross-env DISABLE_ESLINT_PLUGIN=true craco test --env=jsdom",
-    "eject": "cross-env DISABLE_ESLINT_PLUGIN=true craco eject"
+    "start": "cross-env craco start",
+    "build": "cross-env craco build",
+    "test": "cross-env craco test --env=jsdom",
+    "eject": "cross-env craco eject"
   },
   "browserslist": {
     "production": [
