@@ -1,6 +1,6 @@
-import { Project } from '../types/Project'
+import { IProject } from '../types/IProject'
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: IProject[] = [
   {
     name: 'Twitter',
     description: 'Twitter is a web application that allows users to post and share messages.',

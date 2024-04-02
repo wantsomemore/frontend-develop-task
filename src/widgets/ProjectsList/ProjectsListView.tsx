@@ -1,20 +1,27 @@
 import React, { useCallback } from 'react'
 import { FlatList } from 'react-native'
 
-import { Project } from 'app/types/Project'
+import { IProject } from 'app/types/IProject'
 
 import { Header } from 'app/ds'
 
-import { ProjectItemView } from './ProjectItemView'
+import ProjectItemView from './ProjectItemView'
 import styles from './ProjectsListView.styles'
 
 export const ProjectsListView: React.FC<{
-  projects: Project[]
-  onProjectPress: (project: Project) => void
-}> = ({ projects, onProjectPress }) => {
+  projects: IProject[]
+  activeProject: IProject | null | undefined
+  onProjectPress: (project: IProject) => void
+}> = ({ projects, activeProject, onProjectPress }) => {
   const renderItem = useCallback(
-    ({ item }: { item: Project }) => <ProjectItemView project={item} onPress={onProjectPress} />,
-    []
+    ({ item }: { item: IProject }) => (
+      <ProjectItemView
+        project={item}
+        isActive={activeProject?.name === item.name}
+        onPress={onProjectPress}
+      />
+    ),
+    [activeProject?.name, onProjectPress]
   )
 
   return (
